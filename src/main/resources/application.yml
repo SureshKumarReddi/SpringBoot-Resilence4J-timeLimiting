@@ -1,0 +1,16 @@
+server:
+  port: 3333
+  
+resilience4j:
+  timelimiter:
+     instances:
+      getMessageTL:
+       timeout-duration: 1ms
+       cancel-running-future: false
+       
+#‘timeout-duration=1ms’ indicates that the maximum amount of time a request 
+#can take to respond is 1 millisecond
+
+#‘cancel-running-future=false’ indicates that do not cancel the 
+#Running Completable Futures After TimeOut.      
+ 
